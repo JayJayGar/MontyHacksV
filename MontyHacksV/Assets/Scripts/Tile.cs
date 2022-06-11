@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [Serialized] private Color _baseColor, _offsetColor;
+    [Serialized] private SpriteRenderer _renderer;
+    [Serialized] private GameObject _highlight;
+
+    public void Init(bool isOffset){
+        _renderer.Color = isOffset ? _offsetColor:_baseColor;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void private void OnMouseEnter() {
+        _highlight.SetActive(true);
     }
+
+    void private void OnMouseExit() {
+        _highlight.SetActive(false);
+    }
+    
 }
