@@ -9,7 +9,7 @@ public class Tile : MonoBehaviour
     [SerializeField] private GameObject _highlight;
 
     public void Init(bool isOffset){
-        _sprite.color = isOffset ? _offsetColor : _baseColor;
+        _sprite.color = isOffset ? _sprite.color : _sprite.baseColor;
         
     }
 
