@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    [Serialized] private Color _baseColor, _offsetColor;
-    [Serialized] private SpriteRenderer _renderer;
-    [Serialized] private GameObject _highlight;
+    [SerializeField] private Color _baseColor, _offsetColor;
+    [SerializeField] private SpriteRenderer _renderer;
+    [SerializeField] private GameObject _highlight;
 
     public void Init(bool isOffset){
-        _renderer.Color = isOffset ? _offsetColor:_baseColor;
+        _renderer.color = isOffset ? _offsetColor:_baseColor;
     }
 
-    void private void OnMouseEnter() {
+    private void OnMouseEnter() {
         _highlight.SetActive(true);
     }
 
-    void private void OnMouseExit() {
+    private void OnMouseExit() {
         _highlight.SetActive(false);
     }
     
